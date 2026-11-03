@@ -70,59 +70,43 @@ FormReady/
 ├── 404.html                    # Helpful error page with deep-links back to tools
 ├── robots.txt                  # Search engine crawl directives
 ├── sitemap.xml                 # XML sitemap indexing all canonical URLs
-├── server.js                   # Lightweight zero-dependency local static server
-├── test-suite.js               # 178-point automated QA test suite
-├── dom-interactive-test.js     # DOM & functional simulation test suite
-├── browser-verify.js           # Headless Google Chrome browser validation script
-├── .gitignore                  # Git ignore rules for node_modules, temp files, and OS artifacts
+├── .gitignore                  # Git ignore rules for OS artifacts and temporary files
 ├── .nojekyll                   # Bypasses Jekyll processing on GitHub Pages
-├── package.json                # Project manifest & test runners
 └── LICENSE                     # MIT Open Source License
 ```
 
 ---
 
-## 💻 Local Development Setup
+## 💻 Local Development & Preview
 
-Because FormReady is built with standard vanilla web standards, it has **zero build steps** and **zero compilation requirements**.
+FormReady is built using pure, standard web technologies (HTML5, CSS3, vanilla JavaScript). It has **zero build steps, zero package managers, and zero dependencies**.
 
-### Option A: Using Built-in Node.js Server (Recommended)
+### Option A: Open Directly in Your Browser
 
-1. Clone or download the repository:
-   ```bash
-   git clone https://github.com/<your-username>/FormReady.git
-   cd FormReady
-   ```
+Double-click [`index.html`](index.html) or right-click and choose **Open With > Google Chrome / Firefox / Edge / Safari**.
 
-2. Start the local server:
-   ```bash
-   npm start
-   ```
+### Option B: Using a Simple Local Static Server
 
-3. Open your browser and navigate to:
-   ```text
-   http://127.0.0.1:8080/
-   ```
+If you prefer previewing over `http://localhost`, use any lightweight static server:
 
-### Option B: Open Directly in Any Browser
+```bash
+# Using Python 3 (pre-installed on most systems)
+python -m http.server 8080
 
-You can simply double-click [`index.html`](index.html) or open it via any browser. (Note: Running via an HTTP server is recommended for testing service workers and canvas export features).
+# Using VS Code Live Server extension
+# Right-click index.html -> "Open with Live Server"
+
+# Using npx (one-off zero-install command)
+npx serve .
+```
 
 ---
 
-## 🧪 Testing & Quality Assurance
+## 🧪 Quality Assurance & Compliance
 
-FormReady comes with an automated testing pipeline:
+FormReady has undergone full browser runtime and quality assurance verification:
 
-```bash
-# Run unit, content, schema, and DOM interaction tests (178/178 tests)
-npm test
-
-# Run Google Chrome headless browser rendering & screenshot verification
-npm run test:browser
-```
-
-### Test Coverage Highlights:
+- **100% Client-Side Privacy:** Verified that zero HTTP requests are initiated during image crop, resize, or download. Canvas manipulation executes in-memory.
 - **Word Count & AdSense Audit:** Verified that all content pages exceed Google AdSense requirements (Index > 2,000 words, legal > 700 words, tool pages > 800 words).
 - **Binary Search Convergence:** Validated JPEG quantization output against strict exam ceilings:
   - SSC Photo (200×230 px @ max 50 KB) → converges to ~22 KB at Q=0.95 (under budget).
@@ -188,3 +172,4 @@ FormReady is architected around absolute client-side isolation:
 ## 📄 License
 
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details. Free for personal, commercial, and educational use.
+
