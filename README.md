@@ -4,172 +4,138 @@
 
 **Free, Privacy-First In-Browser Photo & Signature Resizer for Indian Exam Portals**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Zero Backend](https://img.shields.io/badge/Backend-Zero%20(100%25%20Client--Side)-brightgreen.svg)](#privacy-first-architecture)
-[![Canvas API](https://img.shields.io/badge/Engine-HTML5%20Canvas%20API-orange.svg)](#technical-architecture)
-[![Dependencies](https://img.shields.io/badge/Dependencies-Zero%20(Pure%20Vanilla%20JS)-success.svg)](#features)
-[![AdSense Ready](https://img.shields.io/badge/AdSense-Approval%20Ready-yellow.svg)](#adsense-readiness)
+[![Zero Backend](https://img.shields.io/badge/Backend-Zero%20(100%25%20Client--Side)-brightgreen.svg)](#-privacy--security-guarantee)
+[![Canvas API](https://img.shields.io/badge/Engine-HTML5%20Canvas%20API-orange.svg)](#-key-features)
+[![Privacy First](https://img.shields.io/badge/Privacy-100%25%20In--Browser-blue.svg)](#-privacy--security-guarantee)
+[![Exam Presets](https://img.shields.io/badge/Presets-25%2B%20Indian%20Exams-purple.svg)](#-supported-exam-specifications)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 <p align="center">
-  Resize and compress candidate passport photographs and signatures to the exact pixel dimensions (e.g., 200×230, 140×60) and file size limits (20KB, 50KB, 100KB) mandated by Indian exam portals.
+  A dedicated web utility designed to help millions of Indian competitive exam candidates resize, crop, and compress their passport photos and signatures to the exact pixel dimensions and strict KB limits required by government recruitment portals.
 </p>
 
-[**Explore Presets**](exam-presets.html) • [**Photo Resizer**](photo-resizer.html) • [**Signature Resizer**](signature-resizer.html) • [**Compress to KB**](compress-image-to-kb.html)
+[**Home**](index.html) • [**Photo Resizer**](photo-resizer.html) • [**Signature Resizer**](signature-resizer.html) • [**Compress to KB**](compress-image-to-kb.html) • [**Exam Presets**](exam-presets.html) • [**Guides**](blog.html)
 
 </div>
 
 ---
 
-## 📌 Overview
+## 📌 About FormReady
 
-Every year, millions of Indian applicants face application rejection due to mismatched image dimensions, incorrect aspect ratios, or exceeding file size limits (e.g., *maximum 50 KB for SSC CGL photos*, *maximum 20 KB for signatures*).
+Every year, millions of candidates apply for competitive exams and government jobs across India (SSC, UPSC, IBPS, Railways, NEET, JEE, and State PSCs). A major reason for online application form rejection is **non-compliant photograph and signature uploads**—exceeding file size limits, incorrect aspect ratios, or wrong pixel dimensions.
 
-**FormReady** solves this problem entirely inside the user's web browser:
-- **Zero Server Uploads:** Images never leave the candidate's device. Processing occurs locally using the browser's native **W3C Canvas API**.
-- **Binary Search Compression:** Automatically determines the highest possible JPEG quality that strictly fits under the target KB ceiling without exceeding it.
-- **25+ Official Exam Presets:** One-click presets for SSC (CGL, CHSL, MTS), UPSC Civil Services, IBPS Bank PO/Clerk, SBI, RRB Railways, NEET, JEE Main, GATE, CUET, and State PSCs.
-
----
-
-## 🚀 Key Features
-
-- **⚡ 100% Client-Side Processing:** Zero backend servers, zero database, zero API keys. Safe for sensitive candidate documents.
-- **🎯 Exact Dimension & Aspect Ratio Lock:** Crop, zoom, pan, and rotate photos with custom or locked aspect ratios.
-- **⚖️ Smart JPEG Binary Search Optimizer:** Converges logarithmically to the optimal JPEG quality factor (0.01 – 1.00) in under 8 iterations to match target KB limits within 1% error margin.
-- **🌗 Zero-Flash Dark & Light Modes:** Synchronizes with system preferences and remembers choices via `localStorage` with no Flash of Unstyled Content (FOUC).
-- **📱 Fully Responsive Design:** Clean mobile-first layout with fluid CSS variables, glassmorphic cards, and smooth CSS transitions.
-- **🔍 Searchable Exam Directory:** Filter exam cards by category (Central, Banking, Engineering, Medical, State PSC) or search by exam keyword with one-click tool pre-filling.
-- **♿ Accessible & SEO-Optimized:** Semantic HTML5, ARIA labels, structured JSON-LD schemas (`WebApplication`, `FAQPage`, `BreadcrumbList`, `Organization`), and full Lighthouse performance compliance.
+**FormReady** solves this problem directly in your web browser:
+- **100% Client-Side Processing:** Images are never uploaded to any server or external cloud. Everything runs locally on your device via the browser's native **HTML5 Canvas API**.
+- **Exact File Size Matching:** Our smart binary search compression algorithm fine-tunes JPEG quality to hit your target file size (e.g., *strictly under 50 KB* or *under 20 KB*) without trial and error.
+- **Pre-Configured Exam Standards:** Instant presets with official dimension and size requirements for over 25 major central, banking, medical, engineering, and state examinations.
 
 ---
 
-## 📂 Project Structure
+## 🛠️ Website Tools & Pages
 
-```text
-FormReady/
-├── .github/
-│   └── workflows/
-│       └── deploy.yml          # Automated 1-click GitHub Pages CI/CD workflow
-├── css/
-│   └── style.css               # Unified responsive stylesheet with dark/light themes & CSS variables
-├── js/
-│   ├── theme.js                # Zero-flash theme switcher (localStorage + prefers-color-scheme)
-│   ├── tool.js                 # Canvas resize engine, preset registry & binary search optimizer
-│   └── main.js                 # Mobile drawer, FAQ accordions, search filter & contact form logic
-├── index.html                  # Homepage (hero, interactive tool, presets, guides, FAQs)
-├── photo-resizer.html          # Dedicated passport photo resizer tool
-├── signature-resizer.html      # Dedicated signature resizer tool
-├── compress-image-to-kb.html   # Quick target KB compressor (10KB, 20KB, 50KB, 100KB, 200KB)
-├── exam-presets.html           # Comprehensive 25+ exam specification directory
-├── blog.html                   # 4 In-depth technical guides & exam application tutorials
-├── about.html                  # About FormReady & privacy philosophy (800+ words)
-├── contact.html                # Contact form with real-time validation & mailto fallback
-├── privacy-policy.html         # AdSense & DoubleClick DART cookie disclosures (1,100+ words)
-├── disclaimer.html             # Government non-affiliation disclaimer & verification notes
-├── terms.html                  # Terms of service & acceptable use policy
-├── 404.html                    # Helpful error page with deep-links back to tools
-├── robots.txt                  # Search engine crawl directives
-├── sitemap.xml                 # XML sitemap indexing all canonical URLs
-├── .gitignore                  # Git ignore rules for OS artifacts and temporary files
-├── .nojekyll                   # Bypasses Jekyll processing on GitHub Pages
-└── LICENSE                     # MIT Open Source License
-```
+### 1. [Passport Photo Resizer](photo-resizer.html)
+- Specially tailored for Indian passport-style photos (standard 200 × 230 px or 3.5 × 4.5 cm).
+- Built-in aspect ratio lock (1:1.15 and 3.5:4.5), pan, zoom, and rotate controls.
+- Interactive visual overlay to ensure 80% face coverage and eye-level alignment.
+- Targets official 20 KB – 50 KB file limits with crisp clarity.
+
+### 2. [Signature Resizer](signature-resizer.html)
+- Configured for official signature formats (standard 140 × 60 px or 3:1 aspect ratio).
+- Auto-crops wide running-hand signatures on white paper with black/blue ink.
+- Optimizes stroke contrast and removes grey scanner tint.
+- Compresses strictly under 10 KB – 20 KB ceilings required by SSC, UPSC, and IBPS portals.
+
+### 3. [Compress Image to Exact KB](compress-image-to-kb.html)
+- One-click compression chips: **10 KB**, **20 KB**, **50 KB**, **100 KB**, and **200 KB**.
+- Custom file size target input for any arbitrary portal limit.
+- Automatic binary search quantization that hits the target size within 1% error margin without exceeding the ceiling.
+
+### 4. [Exam Presets Directory](exam-presets.html)
+- Searchable directory of 25+ Indian competitive exam photo and signature requirements.
+- Category filters: **Central Government**, **Banking & Insurance**, **Engineering & Medical**, **Defense & Police**, and **State PSCs**.
+- Each card displays required dimensions (px/cm), file size range (KB), accepted format (JPG/PNG), and a one-click button to load specifications into the resizer.
+
+### 5. [Step-by-Step Guides & Blog](blog.html)
+- *How to Compress a Photo to 20KB for Exam Forms Without Losing Quality*
+- *Complete Guide to SSC Photo & Signature Size Requirements (CGL, CHSL, MTS)*
+- *UPSC Civil Services Photo & Signature Upload Guidelines*
+- *Top 7 Reasons Why Exam Form Photos Get Rejected (and How to Avoid Them)*
 
 ---
 
-## 💻 Local Development & Preview
+## 📋 Supported Exam Specifications
 
-FormReady is built using pure, standard web technologies (HTML5, CSS3, vanilla JavaScript). It has **zero build steps, zero package managers, and zero dependencies**.
+| Exam / Portal | Document Type | Dimensions | File Size (KB) | Format |
+| :--- | :--- | :--- | :--- | :--- |
+| **SSC CGL / CHSL / MTS** | Passport Photo | 200 × 230 px (3.5 × 4.5 cm) | 20 KB – 50 KB | JPEG / JPG |
+| **SSC CGL / CHSL / MTS** | Signature | 140 × 60 px (4.0 × 2.0 cm) | 10 KB – 20 KB | JPEG / JPG |
+| **UPSC Civil Services (CSE)** | Photograph | 350 × 350 px (Min) – 1000 × 1000 px | 20 KB – 300 KB | JPEG / JPG |
+| **UPSC Civil Services (CSE)** | Signature | 350 × 350 px (Min) – 1000 × 1000 px | 20 KB – 300 KB | JPEG / JPG |
+| **IBPS PO / Clerk / RRB** | Passport Photo | 200 × 230 px (4.5 × 3.5 cm) | 20 KB – 50 KB | JPEG / JPG |
+| **IBPS PO / Clerk / RRB** | Signature | 140 × 60 px | 10 KB – 20 KB | JPEG / JPG |
+| **SBI PO / Clerk** | Passport Photo | 200 × 230 px | 20 KB – 50 KB | JPEG / JPG |
+| **SBI PO / Clerk** | Signature | 140 × 60 px | 10 KB – 20 KB | JPEG / JPG |
+| **NEET UG (NTA)** | Postcard Photo (4×6) | 4 × 6 inches (1200 × 1800 px) | 10 KB – 200 KB | JPEG / JPG |
+| **NEET UG (NTA)** | Passport Photo | 200 × 230 px | 10 KB – 200 KB | JPEG / JPG |
+| **JEE Main / Advanced** | Photograph | 200 × 230 px | 10 KB – 200 KB | JPEG / JPG |
+| **JEE Main / Advanced** | Signature | 140 × 60 px | 4 KB – 30 KB | JPEG / JPG |
+| **RRB Railways (NTPC/Group D)** | Photograph | 35 × 45 mm (320 × 240 px) | 20 KB – 50 KB | JPEG / JPG |
+| **GATE Exam** | Photograph | 480 × 640 px (Min) | 20 KB – 200 KB | JPEG / JPG |
+| **Aadhaar / PAN Card** | Photo / Signature | 200 × 200 px / 200 × 400 px | Under 50 KB | JPEG / JPG |
+| **State PSCs (BPSC/UPPSC/MPSC)** | Photo & Signature | Varies by state notification | 20 KB – 50 KB | JPEG / JPG |
 
-### Option A: Open Directly in Your Browser
-
-Double-click [`index.html`](index.html) or right-click and choose **Open With > Google Chrome / Firefox / Edge / Safari**.
-
-### Option B: Using a Simple Local Static Server
-
-If you prefer previewing over `http://localhost`, use any lightweight static server:
-
-```bash
-# Using Python 3 (pre-installed on most systems)
-python -m http.server 8080
-
-# Using VS Code Live Server extension
-# Right-click index.html -> "Open with Live Server"
-
-# Using npx (one-off zero-install command)
-npx serve .
-```
-
----
-
-## 🧪 Quality Assurance & Compliance
-
-FormReady has undergone full browser runtime and quality assurance verification:
-
-- **100% Client-Side Privacy:** Verified that zero HTTP requests are initiated during image crop, resize, or download. Canvas manipulation executes in-memory.
-- **Word Count & AdSense Audit:** Verified that all content pages exceed Google AdSense requirements (Index > 2,000 words, legal > 700 words, tool pages > 800 words).
-- **Binary Search Convergence:** Validated JPEG quantization output against strict exam ceilings:
-  - SSC Photo (200×230 px @ max 50 KB) → converges to ~22 KB at Q=0.95 (under budget).
-  - SSC Signature (140×60 px @ max 20 KB) → converges to ~4 KB at Q=0.95 (under budget).
-  - UPSC Photo (350×350 px @ max 100 KB) → converges to ~69 KB at Q=0.95 (under budget).
-- **Link & Anchor Integrity:** 100% valid internal links and hash navigation.
-- **Zero Console Errors:** Verified in real Google Chrome browser runtime.
+*> Note: Always verify specifications with the official examination notification as portal requirements may update periodically.*
 
 ---
 
-## 🌐 Deploying to GitHub Pages
+## ✨ Key Website Features
 
-FormReady is pre-configured for instant deployment on **GitHub Pages**.
-
-### Method 1: Automated Deployment via GitHub Actions (Recommended)
-
-This repository already includes `.github/workflows/deploy.yml`.
-
-1. Create a new repository on [GitHub](https://github.com/new) named `FormReady` (or any name you prefer).
-2. Push your code:
-   ```bash
-   git init -b main
-   git add .
-   git commit -m "Initial commit: FormReady v1.0.0"
-   git remote add origin https://github.com/<your-username>/FormReady.git
-   git push -u origin main
-   ```
-3. In your GitHub repository:
-   - Go to **Settings** > **Pages**.
-   - Under **Build and deployment** > **Source**, select **GitHub Actions**.
-4. The workflow will automatically trigger, build, and publish your site at:
-   ```text
-   https://<your-username>.github.io/FormReady/
-   ```
-
-### Method 2: Standard Branch Deployment
-
-1. Push your code to the `main` branch.
-2. In your GitHub repository, go to **Settings** > **Pages**.
-3. Under **Source**, choose **Deploy from a branch**.
-4. Select branch: `main` and folder: `/ (root)`.
-5. Click **Save**. Your site will be live within 1–2 minutes!
+- **⚡ 100% In-Browser Execution:** Zero server lag, zero queue, instant canvas rendering.
+- **🎯 Live Interactive Canvas Preview:** View real-time before/after comparisons, exact resulting file sizes, and dimensions before downloading.
+- **🔄 Complete Adjustment Controls:** Freehand or locked aspect ratios, 90° clockwise rotation, fine-tuned zoom slider, and panning.
+- **⚖️ Binary Search Quality Convergence:** Computes the optimal JPEG quantization parameter (0.01 – 1.00) in under 8 logarithmic iterations, guaranteeing the file never exceeds your chosen KB limit.
+- **🌗 Dark & Light Theme Modes:** Supports seamless light and dark mode toggling with automatic system preference detection and zero page flicker.
+- **📱 Mobile-First Responsive Design:** Clean layout built with modern CSS custom properties (variables), accessible cards, and touch-friendly controls.
+- **♿ Web Accessibility & SEO:** Fully semantic HTML5 structure, comprehensive JSON-LD schemas (`WebApplication`, `FAQPage`, `BreadcrumbList`, `Organization`), and WCAG compliant contrast ratios.
 
 ---
 
-## ☁️ Alternative Free Deployment Options
+## 🌐 Full Website Pages Directory
 
-- **Netlify:** Drag and drop the project folder into [Netlify Drop](https://app.netlify.com/drop).
-- **Cloudflare Pages:** Connect your GitHub repository to Cloudflare Pages; set build command to empty and output directory to `/`.
-- **Vercel:** Run `npx vercel` in the project root.
+| Page | URL | Purpose |
+| :--- | :--- | :--- |
+| **Homepage** | [`index.html`](index.html) | Main hero resizer, presets dropdown, feature highlights, and FAQs |
+| **Photo Resizer** | [`photo-resizer.html`](photo-resizer.html) | Dedicated passport photo cropping and 20–50KB resizing |
+| **Signature Resizer** | [`signature-resizer.html`](signature-resizer.html) | Dedicated 140×60px signature trimmer and 10–20KB compressor |
+| **Target KB Compressor** | [`compress-image-to-kb.html`](compress-image-to-kb.html) | Fast compression to exact file sizes (10KB, 20KB, 50KB, 100KB, 200KB) |
+| **Exam Presets** | [`exam-presets.html`](exam-presets.html) | Complete catalog of 25+ exams with category tabs and live search |
+| **Blog & Guides** | [`blog.html`](blog.html) | Articles, portal photo rules, and rejection prevention tutorials |
+| **About Us** | [`about.html`](about.html) | Mission statement, team, and client-side privacy philosophy |
+| **Contact Support** | [`contact.html`](contact.html) | Feedback and candidate inquiry form with mailto fallback |
+| **Privacy Policy** | [`privacy-policy.html`](privacy-policy.html) | Full privacy rights, cookie information, and AdSense disclosures |
+| **Disclaimer** | [`disclaimer.html`](disclaimer.html) | Government non-affiliation notice and candidate verification advice |
+| **Terms of Service** | [`terms.html`](terms.html) | Acceptable use policy, intellectual property, and disclaimers |
+| **404 Not Found** | [`404.html`](404.html) | Friendly error recovery page with quick navigation back to tools |
 
 ---
 
 ## 🛡️ Privacy & Security Guarantee
 
-FormReady is architected around absolute client-side isolation:
-1. **No External Network Calls:** No images or personal files are transmitted over the internet.
-2. **In-Memory Operations:** Images are decoded directly into an HTML5 `<canvas>` element and garbage-collected once processed.
-3. **GDPR, CCPA & Indian DPDP Act Compliant:** Because no user data is collected or stored, privacy compliance is built-in by design.
+Your personal photos and signatures are sensitive identity documents. FormReady is strictly engineered around **complete client-side data isolation**:
+
+1. **Zero Uploads:** When you select an image, it is read directly into your device's memory using the browser's `FileReader` and rendered on an HTML5 `<canvas>`.
+2. **Zero Storage:** Files are never transmitted over the internet or saved on any remote database or third-party server.
+3. **Automatic Clearance:** Closing or refreshing the page immediately clears your images from local memory.
+4. **GDPR, CCPA & DPDP Compliant:** Because no personally identifiable information (PII) is collected or processed on servers, candidate privacy is guaranteed.
+
+---
+
+## ⚖️ Legal Disclaimer
+
+FormReady is an independent, free educational utility created to assist candidates with document preparation. FormReady is **not affiliated with, endorsed by, or associated with** the Staff Selection Commission (SSC), Union Public Service Commission (UPSC), Institute of Banking Personnel Selection (IBPS), National Testing Agency (NTA), Railway Recruitment Boards (RRB), or any government authority. Candidates are strongly advised to check the official exam notification before uploading documents.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details. Free for personal, commercial, and educational use.
-
+This website project is open source and licensed under the **[MIT License](LICENSE)**. Free for personal, commercial, and educational use.
