@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FormReady | Free Photo & Signature Resizer for Indian Exam Forms (SSC, UPSC, IBPS, NEET)</title>
+  <meta name="description" content="Resize and compress photos and signatures to exact pixel dimensions (e.g. 200x230, 140x60) and file sizes (20KB, 50KB, 100KB) for SSC, UPSC, IBPS, SBI, NEET, JEE and government portals. 100% private in-browser tool.">
+  <meta name="keywords" content="photo resizer for exam, signature resizer 20kb, ssc photo resizer, upsc photo signature resize, compress image to 50kb, 200x230 photo resizer, 140x60 signature resizer, neet photo resizer, ibps photo signature">
+  <meta name="author" content="FormReady">
+  <link rel="canonical" href="https://formready.io/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://formready.io/">
+  <meta property="og:title" content="FormReady | Free Photo & Signature Resizer for Indian Exam Forms">
+  <meta property="og:description" content="Easily resize and compress your passport photo and signature to exact KB and pixel requirements for SSC, UPSC, IBPS, NEET, JEE & Indian job portals. 100% private in-browser processing.">
+  <meta property="og:image" content="https://formready.io/images/formready-og.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://formready.io/">
+  <meta name="twitter:title" content="FormReady | Photo & Signature Resizer for Exam Portals">
+  <meta name="twitter:description" content="Zero upload, browser-based photo and signature resizer for all Indian competitive exams. Fast, free, and accurate.">
+  <meta name="twitter:image" content="https://formready.io/images/formready-og.png">
+
+  <!-- Immediate Theme Initializer (Prevents Flash) -->
+  <script src="js/theme.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured Data: WebApplication, Organization, FAQPage, BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://formready.io/#organization",
+        "name": "FormReady",
+        "url": "https://formready.io/",
+        "logo": "https://formready.io/images/formready-logo.png",
+        "sameAs": [
+          "https://facebook.com/formready",
+          "https://twitter.com/formready",
+          "https://instagram.com/formready",
+          "https://linkedin.com/company/formready"
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://formready.io/#webapp",
+        "name": "FormReady Photo & Signature Resizer",
+        "url": "https://formready.io/",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        },
+        "description": "Browser-based photo and signature resizer and compressor for Indian government and competitive exams including SSC, UPSC, IBPS, SBI, RRB, and NEET."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://formready.io/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://formready.io/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://formready.io/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Are my uploaded photos or signatures saved on any server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. FormReady operates 100% locally inside your web browser using HTML5 Canvas API. Your photos, documents, and signatures never leave your device or get uploaded to any external server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the standard photo and signature dimensions for SSC CGL and CHSL?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For SSC examinations (CGL, CHSL, MTS, GD), candidate photos must be 200 x 230 pixels with file size between 20KB and 50KB in JPEG format. Signatures must be 140 x 60 pixels with file size between 10KB and 20KB."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does FormReady compress photos to exact KB limits without blurriness?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "FormReady uses a binary search algorithm on the JPEG quality factor. It tests multiple compression ratios in milliseconds to find the highest possible visual clarity that strictly stays below your target KB ceiling."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the photo requirements for UPSC Civil Services examination?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "UPSC requires photograph dimensions between 350 x 350 pixels (minimum) and 1000 x 1000 pixels (maximum), with a file size between 20KB and 300KB in JPG format. The candidate's face must occupy at least 3/4th of the photograph space."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Accessibility Skip Navigation -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header & Navigation -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="FormReady Home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+        </div>
+        <span>Form<span style="color: var(--primary-600);">Ready</span></span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+          <li><a href="photo-resizer.html">Photo Resizer</a></li>
+          <li><a href="signature-resizer.html">Signature Resizer</a></li>
+          <li><a href="compress-image-to-kb.html">Compress to KB</a></li>
+          <li><a href="exam-presets.html">Exam Presets</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Dark/Light Mode Toggle -->
+        <button type="button" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button type="button" class="hamburger" aria-label="Open mobile menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Anchor -->
+  <main id="main-content">
+    <!-- Hero Section with Animated Blobs & Illustration -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <div class="hero-blobs" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="section-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            100% Private • Local Browser Processing
+          </div>
+          <h1 id="hero-heading">
+            Resize Photos & Signatures to Exact <span class="gradient-text">Pixel & KB Limits</span> for Exam Forms
+          </h1>
+          <p class="hero-desc">
+            Instantly format passport photos and signatures for SSC, UPSC, IBPS, SBI, RRB, NEET, JEE, GATE, and State PSC application portals. Guaranteed compliance with zero file uploads.
+          </p>
+          <div class="hero-actions">
+            <a href="#resizer-tool-section" class="btn btn-primary btn-lg btn-pulse">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              Resize Photo Now
+            </a>
+            <a href="exam-presets.html" class="btn btn-secondary btn-lg">
+              Explore 20+ Exam Presets
+            </a>
+          </div>
+          <div class="hero-highlights">
+            <div class="hero-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Exact Pixel Dimensions</span>
+            </div>
+            <div class="hero-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Strict KB Binary Search</span>
+            </div>
+            <div class="hero-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Zero Server Transmission</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Animated Resize Illustration -->
+        <div class="hero-illustration" aria-hidden="true">
+          <div class="resize-anim-box">
+            <div class="anim-frame-outer">
+              <div class="anim-photo-card">
+                <div class="anim-scan-line"></div>
+                <div class="anim-photo-avatar"></div>
+                <div class="anim-photo-body"></div>
+              </div>
+              <div class="anim-badge-before">Original: 3.8 MB</div>
+              <div class="anim-badge-after">FormReady: 48 KB</div>
+            </div>
+            <div class="anim-dimension-marker">
+              <span>Target: 200 × 230 px</span>
+              <span style="color: var(--accent-emerald);">Format: JPEG (Max 50KB)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resizer Tool Section -->
+    <section id="resizer-tool-section" class="tool-section container" aria-label="Online Image Resizer and Compressor Tool">
+      <div class="tool-app-card">
+        <!-- Mode Tabs -->
+        <div class="tool-modes-nav" role="tablist">
+          <button type="button" class="tool-mode-tab is-active" role="tab" aria-selected="true" onclick="window.location.href='index.html#resizer-tool-section'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Universal Resizer
+          </button>
+          <button type="button" class="tool-mode-tab" role="tab" aria-selected="false" onclick="window.location.href='photo-resizer.html'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Passport Photo Mode
+          </button>
+          <button type="button" class="tool-mode-tab" role="tab" aria-selected="false" onclick="window.location.href='signature-resizer.html'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            Signature Mode
+          </button>
+          <button type="button" class="tool-mode-tab" role="tab" aria-selected="false" onclick="window.location.href='compress-image-to-kb.html'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+            Compress to Exact KB
+          </button>
+        </div>
+
+        <div class="tool-body">
+          <!-- Dropzone View (Initial State) -->
+          <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Upload photo or signature file">
+            <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp,image/bmp" style="display: none;" aria-hidden="true">
+            <div class="dropzone-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+            </div>
+            <h2 class="dropzone-title">Drag & Drop Your Photo or Signature Here</h2>
+            <p class="dropzone-hint">or click to browse from device • Supports JPG, PNG, WebP • Paste via Ctrl+V</p>
+            <div class="dropzone-badge-list">
+              <span class="dropzone-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                100% In-Browser Privacy
+              </span>
+              <span class="dropzone-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                No Data Transferred
+              </span>
+              <span class="dropzone-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Instant Quality Optimizer
+              </span>
+            </div>
+          </div>
+
+          <!-- Active Workbench Grid (Shown after image load) -->
+          <div id="workbench" class="workbench-grid" style="display: none;">
+            <!-- Canvas Viewport Panel -->
+            <div class="canvas-panel">
+              <div id="canvas-container" class="canvas-viewport-wrapper">
+                <canvas id="preview-canvas" width="200" height="230"></canvas>
+              </div>
+
+              <!-- Quick Canvas Toolbar -->
+              <div class="canvas-toolbar">
+                <div class="canvas-btn-group">
+                  <button type="button" id="btn-rotate-ccw" class="tool-icon-btn" title="Rotate 90° Counter-Clockwise" aria-label="Rotate Counter-Clockwise">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                  </button>
+                  <button type="button" id="btn-rotate-cw" class="tool-icon-btn" title="Rotate 90° Clockwise" aria-label="Rotate Clockwise">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                  </button>
+                  <button type="button" id="btn-flip-h" class="tool-icon-btn" title="Flip Horizontal" aria-label="Flip Horizontal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h3"/><path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
+                  </button>
+                  <button type="button" id="btn-reset-transform" class="tool-icon-btn" title="Reset Zoom and Rotation" aria-label="Reset Transform">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                  </button>
+                </div>
+
+                <button type="button" id="btn-upload-new" class="btn btn-secondary btn-sm">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  Upload New Photo
+                </button>
+              </div>
+
+              <!-- Comparison Stats Banner -->
+              <div class="stats-banner">
+                <div>
+                  <div class="stat-item-label">Original Image</div>
+                  <div id="stat-orig-size" class="stat-item-value">0 KB</div>
+                  <div id="stat-orig-dim" class="stat-item-label" style="margin-top: 4px;">0 × 0 px</div>
+                </div>
+                <div>
+                  <div class="stat-item-label">Target Output</div>
+                  <div id="stat-out-size" class="stat-item-value">0 KB</div>
+                  <div id="stat-out-dim" class="stat-item-label" style="margin-top: 4px;">200 × 230 px</div>
+                </div>
+              </div>
+
+              <div id="stat-status-badge" class="stat-item-badge badge-success" style="text-align: center; width: 100%; padding: 0.5rem;">
+                ✓ Ready for upload
+              </div>
+            </div>
+
+            <!-- Configuration & Controls Panel -->
+            <div class="controls-panel">
+              <!-- Preset Selector Card -->
+              <div class="control-group-card">
+                <div class="control-group-title">
+                  <span>Exam / Portal Preset</span>
+                  <a href="exam-presets.html" style="font-size: 0.775rem; text-transform: none;">View All Presets →</a>
+                </div>
+                <div class="form-group">
+                  <select id="preset-select" class="form-control" aria-label="Select Exam Preset">
+                    <!-- Populated dynamically via tool.js -->
+                  </select>
+                </div>
+                <div id="preset-notice" class="callout-box" style="margin: 0.5rem 0 0; padding: 0.65rem 0.85rem; font-size: 0.825rem; display: none;"></div>
+              </div>
+
+              <!-- Dimensions & Format Card -->
+              <div class="control-group-card">
+                <div class="control-group-title">Dimensions & Format</div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="target-width">Width (Pixels)</label>
+                    <input type="number" id="target-width" class="form-control" value="200" min="20" max="4000">
+                  </div>
+                  <div class="form-group">
+                    <label for="target-height">Height (Pixels)</label>
+                    <input type="number" id="target-height" class="form-control" value="230" min="20" max="4000">
+                  </div>
+                </div>
+
+                <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                  <input type="checkbox" id="lock-aspect-ratio">
+                  <label for="lock-aspect-ratio" style="margin: 0; font-size: 0.85rem; cursor: pointer;">Lock Aspect Ratio</label>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="target-format">Output Format</label>
+                    <select id="target-format" class="form-control">
+                      <option value="image/jpeg">JPEG / JPG (Standard)</option>
+                      <option value="image/png">PNG</option>
+                      <option value="image/webp">WebP</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="bg-color-select">Background Color</label>
+                    <select id="bg-color-select" class="form-control">
+                      <option value="#ffffff">White (Exam Standard)</option>
+                      <option value="#f1f5f9">Light Grey</option>
+                      <option value="#000000">Black</option>
+                      <option value="transparent">Transparent (PNG)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Target File Size (KB) -->
+                <div class="form-group" style="margin-top: 0.5rem;">
+                  <label for="target-kb">Maximum Target Size (KB)</label>
+                  <input type="number" id="target-kb" class="form-control" value="50" min="5" max="2000">
+                  <div class="quick-kb-chips" aria-label="Quick Target Size Presets">
+                    <button type="button" class="kb-chip" data-kb="10">10 KB</button>
+                    <button type="button" class="kb-chip" data-kb="20">20 KB</button>
+                    <button type="button" class="kb-chip is-selected" data-kb="50">50 KB</button>
+                    <button type="button" class="kb-chip" data-kb="100">100 KB</button>
+                    <button type="button" class="kb-chip" data-kb="200">200 KB</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Crop, Zoom & Alignment Card -->
+              <div class="control-group-card">
+                <div class="control-group-title">Crop & Alignment</div>
+                <div class="form-group">
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                    <label for="slider-zoom" style="margin: 0;">Zoom & Scale</label>
+                    <span id="zoom-val-display" class="slider-val-badge">100%</span>
+                  </div>
+                  <div class="slider-control">
+                    <input type="range" id="slider-zoom" min="0.5" max="3" step="0.05" value="1.0">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="slider-pan-x">Pan Horizontal</label>
+                    <input type="range" id="slider-pan-x" min="-200" max="200" value="0">
+                  </div>
+                  <div class="form-group">
+                    <label for="slider-pan-y">Pan Vertical</label>
+                    <input type="range" id="slider-pan-y" min="-200" max="200" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Download Button -->
+              <div class="workbench-actions">
+                <button type="button" id="btn-download" class="btn btn-primary btn-lg" style="width: 100%;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  Download Form-Ready Image
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AdSense Compliant Banner Slot -->
+    <aside class="ad-slot-wrapper" aria-label="Advertisement">
+      <div class="ad-slot-box">
+        <span>Advertisement</span>
+        <span style="font-size: 0.7rem; color: var(--text-muted); margin-top: 4px;">Responsive Display Ad Slot</span>
+      </div>
+    </aside>
+
+    <!-- Comprehensive Specification Table for Indian Exams -->
+    <section class="container section-py" aria-labelledby="specs-heading">
+      <div class="text-center">
+        <div class="section-badge">Verified Guidelines</div>
+        <h2 id="specs-heading">Official Indian Exam Photo & Signature Specifications</h2>
+        <p class="section-subtitle">
+          Standard dimensions, file limits, and format requirements for major government and competitive recruitment examinations. <em>Note: Always verify with the official notification of the respective examination cycle.</em>
+        </p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="spec-table" aria-label="Indian Exam Document Specifications Table">
+          <thead>
+            <tr>
+              <th scope="col">Examination / Portal</th>
+              <th scope="col">Document Type</th>
+              <th scope="col">Required Pixel Size</th>
+              <th scope="col">File Size (KB)</th>
+              <th scope="col">Accepted Format</th>
+              <th scope="col">Special Guidelines</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>SSC CGL / CHSL / MTS</strong></td>
+              <td>Photograph</td>
+              <td>200 × 230 px</td>
+              <td>20 KB – 50 KB</td>
+              <td>JPEG / JPG</td>
+              <td>Light background, no cap or spectacles, front view</td>
+            </tr>
+            <tr>
+              <td><strong>SSC CGL / CHSL / MTS</strong></td>
+              <td>Signature</td>
+              <td>140 × 60 px</td>
+              <td>10 KB – 20 KB</td>
+              <td>JPEG / JPG</td>
+              <td>Black ink on clean white paper; running hand</td>
+            </tr>
+            <tr>
+              <td><strong>UPSC Civil Services / NDA</strong></td>
+              <td>Photograph</td>
+              <td>350 × 350 px (to 1000×1000)</td>
+              <td>20 KB – 300 KB</td>
+              <td>JPG / JPEG</td>
+              <td>Face must cover 3/4th area, taken within 10 days</td>
+            </tr>
+            <tr>
+              <td><strong>UPSC Civil Services / NDA</strong></td>
+              <td>Signature</td>
+              <td>350 × 350 px (to 1000×1000)</td>
+              <td>20 KB – 300 KB</td>
+              <td>JPG / JPEG</td>
+              <td>Clear dark ink on white background</td>
+            </tr>
+            <tr>
+              <td><strong>IBPS PO / Clerk / SO</strong></td>
+              <td>Photograph</td>
+              <td>200 × 230 px</td>
+              <td>20 KB – 50 KB</td>
+              <td>JPEG / JPG</td>
+              <td>4.5cm × 3.5cm, clear white backdrop</td>
+            </tr>
+            <tr>
+              <td><strong>IBPS PO / Clerk / SO</strong></td>
+              <td>Signature</td>
+              <td>140 × 60 px</td>
+              <td>10 KB – 20 KB</td>
+              <td>JPEG / JPG</td>
+              <td>Black ink pen; capital letters NOT accepted</td>
+            </tr>
+            <tr>
+              <td><strong>SBI PO / Clerk</strong></td>
+              <td>Photograph</td>
+              <td>200 × 230 px</td>
+              <td>20 KB – 50 KB</td>
+              <td>JPEG / JPG</td>
+              <td>Recent colored photo, light background</td>
+            </tr>
+            <tr>
+              <td><strong>SBI PO / Clerk</strong></td>
+              <td>Signature</td>
+              <td>140 × 60 px</td>
+              <td>10 KB – 20 KB</td>
+              <td>JPEG / JPG</td>
+              <td>Black ink on white sheet</td>
+            </tr>
+            <tr>
+              <td><strong>RRB NTPC / Group D</strong></td>
+              <td>Photograph</td>
+              <td>240 × 320 px (or 35×45 mm)</td>
+              <td>20 KB – 50 KB</td>
+              <td>JPEG / JPG</td>
+              <td>Plain white background, no reflections</td>
+            </tr>
+            <tr>
+              <td><strong>RRB NTPC / Group D</strong></td>
+              <td>Signature</td>
+              <td>140 × 60 px</td>
+              <td>10 KB – 40 KB</td>
+              <td>JPEG / JPG</td>
+              <td>Running hand signature in black ink</td>
+            </tr>
+            <tr>
+              <td><strong>NEET UG (NTA)</strong></td>
+              <td>Passport Photo</td>
+              <td>200 × 250 px</td>
+              <td>10 KB – 200 KB</td>
+              <td>JPG / JPEG</td>
+              <td>80% face coverage, ears visible, white background</td>
+            </tr>
+            <tr>
+              <td><strong>NEET UG (NTA)</strong></td>
+              <td>Postcard Photo</td>
+              <td>400 × 600 px (4" × 6")</td>
+              <td>10 KB – 200 KB</td>
+              <td>JPG / JPEG</td>
+              <td>White background with candidate name and date</td>
+            </tr>
+            <tr>
+              <td><strong>NEET UG & JEE Main</strong></td>
+              <td>Signature</td>
+              <td>140 × 60 px</td>
+              <td>4 KB – 30 KB</td>
+              <td>JPG / JPEG</td>
+              <td>Black ink running signature</td>
+            </tr>
+            <tr>
+              <td><strong>GATE (IIT / IISc)</strong></td>
+              <td>Photograph</td>
+              <td>480 × 640 px</td>
+              <td>20 KB – 200 KB</td>
+              <td>JPEG / JPG</td>
+              <td>50% face coverage, professional studio lighting</td>
+            </tr>
+            <tr>
+              <td><strong>GATE (IIT / IISc)</strong></td>
+              <td>Signature</td>
+              <td>280 × 80 px (or 160×560)</td>
+              <td>5 KB – 200 KB</td>
+              <td>JPEG / JPG</td>
+              <td>Dark blue or black ink only</td>
+            </tr>
+            <tr>
+              <td><strong>Indian Passport / Visa</strong></td>
+              <td>Photo</td>
+              <td>413 × 531 px (35×45 mm)</td>
+              <td>30 KB – 200 KB</td>
+              <td>JPEG</td>
+              <td>300 DPI, full face frontal view with neutral expression</td>
+            </tr>
+            <tr>
+              <td><strong>PAN Card (NSDL / UTIITSL)</strong></td>
+              <td>Photo & Signature</td>
+              <td>213 × 213 px / 400×200 px</td>
+              <td>Max 30 KB</td>
+              <td>JPEG</td>
+              <td>Strict 300 DPI scanning standards</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="container section-py" aria-labelledby="how-it-works-heading">
+      <div class="text-center">
+        <div class="section-badge">Fast & Effortless</div>
+        <h2 id="how-it-works-heading">How to Resize Your Photos in 3 Simple Steps</h2>
+        <p class="section-subtitle">
+          No complicated desktop software or expensive cyber café visits required. Complete your entire document preparation in seconds.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Select Exam Preset or Upload</h3>
+          <p>
+            Choose your target examination from the dropdown menu (such as SSC CGL, UPSC, or NEET), or enter custom pixel dimensions and file size limits manually. Drag and drop your existing photo or signature.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Adjust, Crop & Align</h3>
+          <p>
+            Use our interactive canvas controls to zoom in on your face, adjust vertical and horizontal positioning, rotate crooked scans, or flip orientation. Everything previews live in real time.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Download Optimized Image</h3>
+          <p>
+            Click Download. Our engine calculates the optimal compression ratio via binary search, guaranteeing that your file matches the pixel dimensions and stays strictly below the maximum allowed KB.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features & In-Depth Technical Highlights -->
+    <section class="container section-py" aria-labelledby="features-heading">
+      <div class="text-center">
+        <div class="section-badge">Why FormReady</div>
+        <h2 id="features-heading">Engineered for Reliability & Data Privacy</h2>
+        <p class="section-subtitle">
+          Unlike generic online converters that upload your personal identification documents to third-party cloud servers, FormReady works entirely inside your client browser.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>100% Private (Zero Uploads)</h3>
+          <p>
+            All image resizing, cropping, and quantization happens directly in your browser using the HTML5 Canvas API. Your personal photos, signatures, and biometric documents are never stored or transmitted over the internet.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+          </div>
+          <h3>Iterative KB Binary Search</h3>
+          <p>
+            Avoid rejection from portals stating "file size too small" or "file size exceeds 50KB". Our iterative binary search finds the highest possible JPEG quality factor that hits your exact KB target without going 1 byte over.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          </div>
+          <h3>Exact Pixel Precision</h3>
+          <p>
+            Government verification bots automatically discard files with non-compliant aspect ratios or pixel dimensions. FormReady hard-locks output canvases to exact portal requirements (e.g. 200x230 px or 140x60 px).
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>High-Fidelity Lanczos Scaling</h3>
+          <p>
+            Signatures often turn jagged, pixelated, or illegible when compressed. FormReady incorporates high-quality canvas bicubic interpolation to preserve crisp stroke lines and fine penmanship.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>100% Free & No Watermarks</h3>
+          <p>
+            No hidden fees, no subscriptions, no email signups, and absolutely no watermarks stamped onto your examination credentials. Unlimited daily resizes for all candidates across India.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3>Mobile & Touch Friendly</h3>
+          <p>
+            Whether applying from an Android smartphone, an iPhone, a tablet, or a desktop computer at home, our responsive interface provides intuitive pinch, zoom, and slider adjustments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep SEO Educational Guide (1000+ words) -->
+    <article class="container section-py rich-article-content" aria-labelledby="guide-heading">
+      <h2 id="guide-heading">Complete Guide: Overcoming Online Exam Form Photo & Signature Rejections in India</h2>
+      <p>
+        Every year, tens of thousands of competitive exam candidates in India face sudden application rejections or administrative holds due to trivial document upload errors. Organizations such as the <strong>Staff Selection Commission (SSC)</strong>, the <strong>Union Public Service Commission (UPSC)</strong>, the <strong>Institute of Banking Personnel Selection (IBPS)</strong>, and the <strong>National Testing Agency (NTA)</strong> employ automated server-side verification scripts to check incoming media before application forms are admitted.
+      </p>
+
+      <h3>Why Do Exam Portals Reject Uploaded Photos?</h3>
+      <p>
+        Automated application validation systems enforce strict programmatic criteria. If an image deviates by even a single pixel in dimensions or by 0.5 KB beyond the ceiling limit, the server triggers an error: <em>"Invalid image dimensions"</em>, <em>"File size must be between 20 KB and 50 KB"</em>, or <em>"Aspect ratio mismatch"</em>. The most common technical reasons for candidate rejection include:
+      </p>
+      <ul>
+        <li><strong>Incorrect Pixel Resolution:</strong> Submitting an image that is 400x500 pixels when the portal explicitly calls for 200x230 pixels.</li>
+        <li><strong>Excessive File Size (Over-KB):</strong> Modern smartphone cameras capture photographs at 12 to 50 megapixels, generating files between 3 MB and 15 MB. Upload portals cannot accept files larger than 50 KB or 100 KB.</li>
+        <li><strong>Under-Size Compression (Under-KB):</strong> Over-compressing a photograph below the minimum threshold (for instance, dropping below 20 KB on SSC or below 10 KB on IBPS) triggers an automatic validation fault.</li>
+        <li><strong>Faint or Blurry Signatures:</strong> Capturing a signature under dim indoor incandescent lighting leads to a muddy grey background and faded pen strokes that fail human review or OCR checks.</li>
+        <li><strong>Capital Letters in Signatures:</strong> Banking authorities (such as IBPS and SBI) strictly disqualify signatures signed in all-capital block letters.</li>
+        <li><strong>Distorted Aspect Ratios:</strong> Squeezing a landscape photograph into a portrait frame without proper cropping stretches the candidate’s facial features, causing biometric mismatches on exam day.</li>
+      </ul>
+
+      <h3>How to Properly Prepare Your Passport Photograph for Government Exams</h3>
+      <p>
+        To ensure 100% acceptance on your first attempt, follow these professional standards before uploading to FormReady:
+      </p>
+      <ol>
+        <li><strong>Background:</strong> Stand in front of a smooth, clean white or light-off-white wall. Ensure there are no patterns, wall textures, or deep shadows behind your head.</li>
+        <li><strong>Lighting:</strong> Face a window or daylight source directly so that light is evenly distributed across both sides of your face. Avoid harsh top flash that creates shadows under your eyes and nose.</li>
+        <li><strong>Facial Expression & Eyewear:</strong> Maintain a neutral expression with eyes fully open and looking directly into the lens. In recent notifications, NTA and SSC strictly prohibit dark glasses, tinted spectacles, and hats. If you wear regular prescription glasses, ensure there is no flash reflection across the lenses.</li>
+        <li><strong>Head Coverage:</strong> Keep your head centered. The face should occupy approximately 70% to 80% of the photograph area, with neck and tops of shoulders visible.</li>
+      </ol>
+
+      <div class="callout-box">
+        <strong>Important Tip for NEET UG & JEE Aspirants:</strong> NTA requires candidates to have their photograph taken with a placard indicating the candidate's name and the date the photo was captured. Always read the specific information bulletin for your exam year to confirm if a date stamp is mandatory.
+      </div>
+
+      <h3>How to Capture and Resize a Clean Digital Signature</h3>
+      <p>
+        Signatures are among the trickiest documents to resize because heavy JPEG compression smudges fine ink lines. To achieve an immaculate digital signature:
+      </p>
+      <ul>
+        <li>Take a clean, unruled sheet of plain white printer paper (A4 standard).</li>
+        <li>Use a fresh black or dark blue gel or ballpoint pen with medium stroke thickness. Avoid felt pens that bleed through the paper.</li>
+        <li>Sign in your natural, running handwriting. Do not sign in all block capital letters.</li>
+        <li>Take a photo directly from above under bright daylight, holding your phone parallel to the paper to prevent perspective distortion.</li>
+        <li>Load the file into FormReady’s <strong>Signature Resizer</strong> mode. Our tool applies crisp canvas interpolation and sets dimensions to the required 140x60 pixels while maintaining file size between 10 KB and 20 KB.</li>
+      </ul>
+    </article>
+
+    <!-- Interactive FAQ Section -->
+    <section class="container section-py" aria-labelledby="faq-heading">
+      <div class="text-center">
+        <div class="section-badge">Common Questions</div>
+        <h2 id="faq-heading">Frequently Asked Questions</h2>
+        <p class="section-subtitle">
+          Got questions about photo and signature formatting for your examination? Find answers below.
+        </p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Is FormReady completely free to use?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes, FormReady is 100% free and open for all candidates. There are no subscriptions, no premium paywalls, no daily usage limits, and no watermarks added to your photos or signatures.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Are my private photos and signatures secure on FormReady?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Absolutely. FormReady operates entirely inside your device's web browser using client-side HTML5 Canvas technology. Your files are never uploaded, transmitted, or saved on any remote cloud server or database. Even if you disconnect from the internet after loading the page, the tool continues to function smoothly.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>What are the exact photo and signature dimensions for SSC CGL 2026?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>
+              According to official SSC notifications, your photograph must have dimensions of 200 x 230 pixels and a file size strictly between 20 KB and 50 KB in JPG/JPEG format. The signature must be 140 x 60 pixels with a file size between 10 KB and 20 KB. You can choose the "SSC CGL / CHSL / MTS Photo" and "Signature" options from our preset dropdown to auto-configure these values.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>How does FormReady compress photos without losing facial clarity?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Rather than blindly slashing image resolution, FormReady applies a multi-step binary search algorithm on the JPEG quantization matrix. It samples multiple compression quality levels in milliseconds to find the highest mathematical visual fidelity that stays safely under your target KB ceiling.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Can I resize my signature on my smartphone?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes. FormReady is designed mobile-first. You can snap a photo of your signature with your phone's camera, open FormReady in Chrome, Safari, or Firefox, and adjust cropping, pan, and rotation directly with touch sliders.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>What should I do if an exam portal shows "Invalid file format"?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Most Indian government portals exclusively accept JPEG / JPG files. If your source image was in PNG, WebP, or HEIC format, select "JPEG / JPG (Standard)" in the FormReady Output Format dropdown. Our tool converts the raster data into a fully compliant standard JPEG file upon download.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer with Dynamic Brand Social Icons -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand & Privacy Column -->
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="brand-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+            </div>
+            <span>Form<span style="color: var(--primary-600);">Ready</span></span>
+          </a>
+          <p style="font-size: 0.9rem; margin-bottom: 1.25rem;">
+            FormReady is a free, privacy-first in-browser utility built to resize, crop, and compress passport photos and signatures to the exact pixel dimensions and KB limits required by Indian government and competitive exam portals.
+          </p>
+          <div class="footer-privacy-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>100% In-Browser • Files Never Stored</span>
+          </div>
+
+          <!-- Social Icons (Neutral by default, brand on hover with lift, scale and glow) -->
+          <div class="footer-socials-wrapper">
+            <div class="social-icons-list" aria-label="Follow FormReady on Social Media">
+              <!-- Facebook #1877F2 -->
+              <a href="https://facebook.com" class="social-icon-link social-fb" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <!-- X / Twitter #000 / #fff -->
+              <a href="https://x.com" class="social-icon-link social-x" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)">
+                <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <!-- Instagram Gradient -->
+              <a href="https://instagram.com" class="social-icon-link social-insta" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              <!-- YouTube #FF0000 -->
+              <a href="https://youtube.com" class="social-icon-link social-yt" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+              <!-- LinkedIn #0A66C2 -->
+              <a href="https://linkedin.com" class="social-icon-link social-in" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </a>
+              <!-- WhatsApp #25D366 -->
+              <a href="https://whatsapp.com" class="social-icon-link social-wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24"><path d="M12.031 0C5.396 0 .012 5.385.012 12.02c0 2.12.553 4.184 1.603 6.002L.001 24l6.155-1.614a11.97 11.97 0 0 0 5.875 1.534h.005c6.634 0 12.019-5.385 12.019-12.02 0-3.21-1.25-6.226-3.52-8.497C18.261 1.233 15.244 0 12.031 0zm0 22.016c-1.8 0-3.567-.484-5.112-1.401l-.367-.218-3.799.996 1.014-3.704-.239-.38a10.02 10.02 0 0 1-1.536-5.289c0-5.526 4.498-10.023 10.039-10.023 2.68 0 5.197 1.044 7.09 2.94 1.892 1.895 2.934 4.415 2.934 7.095 0 5.527-4.498 10.024-10.024 10.024zm5.498-7.508c-.301-.151-1.782-.88-2.058-.98-.276-.101-.477-.151-.678.151-.2.301-.778.98-.954 1.181-.176.2-.352.226-.653.075-.301-.151-1.272-.469-2.423-1.496-.896-.799-1.501-1.786-1.677-2.087-.176-.301-.019-.464.132-.614.136-.135.301-.352.452-.528.151-.176.201-.301.301-.502.101-.2.05-.377-.025-.528-.075-.151-.678-1.633-.929-2.235-.245-.587-.494-.507-.678-.517l-.578-.01c-.2 0-.527.075-.803.377-.276.301-1.055 1.03-1.055 2.512 0 1.482 1.08 2.914 1.231 3.115.151.2 2.125 3.245 5.148 4.551.719.311 1.28.497 1.719.636.722.229 1.379.197 1.899.119.58-.088 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.431-.075-.125-.276-.2-.577-.351z"/></svg>
+              </a>
+              <!-- Telegram #229ED9 -->
+              <a href="https://telegram.org" class="social-icon-link social-tg" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              </a>
+              <!-- Pinterest #E60023 -->
+              <a href="https://pinterest.com" class="social-icon-link social-pin" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+                <svg viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12.004-5.367 12.004-11.987C24.021 5.367 18.644 0 12.017 0z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Tools Links -->
+        <div>
+          <h4 class="footer-col-title">Specialized Tools</h4>
+          <ul class="footer-nav-list">
+            <li><a href="photo-resizer.html">Passport Photo Resizer</a></li>
+            <li><a href="signature-resizer.html">Signature Resizer</a></li>
+            <li><a href="compress-image-to-kb.html">Compress Image to 20 KB</a></li>
+            <li><a href="compress-image-to-kb.html">Compress Image to 50 KB</a></li>
+            <li><a href="compress-image-to-kb.html">Compress Image to 100 KB</a></li>
+            <li><a href="exam-presets.html">Exam Presets Directory</a></li>
+          </ul>
+        </div>
+
+        <!-- Popular Exams Column -->
+        <div>
+          <h4 class="footer-col-title">Exam Presets</h4>
+          <ul class="footer-nav-list">
+            <li><a href="exam-presets.html?filter=ssc">SSC CGL / CHSL / MTS</a></li>
+            <li><a href="exam-presets.html?filter=upsc">UPSC Civil Services / NDA</a></li>
+            <li><a href="exam-presets.html?filter=banking">IBPS & SBI PO / Clerk</a></li>
+            <li><a href="exam-presets.html?filter=railways">RRB NTPC & Group D</a></li>
+            <li><a href="exam-presets.html?filter=nta">NEET UG & JEE Main</a></li>
+            <li><a href="exam-presets.html?filter=govt-id">Aadhaar & PAN Card</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal & Company Column -->
+        <div>
+          <h4 class="footer-col-title">Company & Legal</h4>
+          <ul class="footer-nav-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+            <li><a href="blog.html">Editorial & Guides</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          &copy; <span class="current-year">2026</span> FormReady. All rights reserved. Built for students & job seekers across India.
+        </div>
+        <div>
+          Independent educational utility. Not affiliated with any government recruitment board.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/tool.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+

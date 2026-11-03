@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Signature Resizer for Exam Forms (140x60 px, 10KB–20KB) | FormReady</title>
+  <meta name="description" content="Resize and compress signatures to 140x60 pixels and 10KB to 20KB for SSC, IBPS, UPSC, RRB, and NEET exam applications. Fast, crisp stroke enhancement, 100% private.">
+  <meta name="keywords" content="signature resizer, 140x60 signature resizer, signature resize 10 to 20 kb, ssc signature resizer, ibps signature size, signature resizer for online exam, compress signature to 20kb">
+  <meta name="author" content="FormReady">
+  <link rel="canonical" href="https://formready.io/signature-resizer.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://formready.io/signature-resizer.html">
+  <meta property="og:title" content="Signature Resizer for Indian Exam Forms (140x60 px) | FormReady">
+  <meta property="og:description" content="Free online tool to resize signatures to 140x60 pixels and 10KB–20KB for SSC, IBPS, SBI, and competitive exams. 100% private in-browser tool.">
+  <meta property="og:image" content="https://formready.io/images/formready-og.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Online Signature Resizer (10KB–20KB) | FormReady">
+  <meta name="twitter:description" content="Resize and format signatures for SSC, IBPS, UPSC, and government job portals with zero server uploads.">
+  <meta name="twitter:image" content="https://formready.io/images/formready-og.png">
+
+  <!-- Immediate Theme Initializer -->
+  <script src="js/theme.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured Data: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://formready.io/signature-resizer.html#webapp",
+        "name": "FormReady Signature Resizer",
+        "url": "https://formready.io/signature-resizer.html",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        },
+        "description": "Client-side digital signature resizer and compressor to 140x60 pixels and 10KB-20KB for competitive exam forms."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://formready.io/signature-resizer.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://formready.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Signature Resizer",
+            "item": "https://formready.io/signature-resizer.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://formready.io/signature-resizer.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What are the standard signature dimensions for SSC CGL and IBPS?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Both SSC and IBPS mandate digital signature dimensions of 140 pixels width by 60 pixels height, with a file size strictly between 10 KB and 20 KB in JPEG format."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I sign in capital letters for banking and government forms?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. IBPS, SBI, and SSC explicitly state in their official notifications that signatures signed in CAPITAL BLOCK LETTERS will be rejected. Signatures must be executed in your natural, running handwriting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I prevent my signature from becoming blurry when compressed to 10KB–20KB?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Blurry signatures are caused by low-resolution scans and harsh compression. FormReady applies smooth bicubic canvas downsampling and iterative JPEG binary quantization to preserve stroke contrast while staying within the 10KB–20KB boundary."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="FormReady Home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+        </div>
+        <span>Form<span style="color: var(--primary-600);">Ready</span></span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="photo-resizer.html">Photo Resizer</a></li>
+          <li><a href="signature-resizer.html" class="active" aria-current="page">Signature Resizer</a></li>
+          <li><a href="compress-image-to-kb.html">Compress to KB</a></li>
+          <li><a href="exam-presets.html">Exam Presets</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button type="button" class="hamburger" aria-label="Open mobile menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="container" style="padding-top: 3.5rem; padding-bottom: 2rem; text-align: center;">
+      <div class="section-badge">Signature Specialist</div>
+      <h1>Online Signature Resizer for Indian Exam Portals</h1>
+      <p class="section-subtitle">
+        Resize and compress your digital signature to the exact <strong>140 × 60 pixel resolution</strong> and <strong>10 KB to 20 KB file limit</strong> required by SSC, IBPS, SBI, RRB, and State PSC portals with zero file uploads.
+      </p>
+    </section>
+
+    <!-- Resizer Tool Section -->
+    <section id="resizer-tool-section" class="tool-section container" aria-label="Signature Resizer Tool">
+      <div class="tool-app-card">
+        <div class="tool-modes-nav" role="tablist">
+          <button type="button" class="tool-mode-tab" onclick="window.location.href='index.html#resizer-tool-section'">
+            Universal Resizer
+          </button>
+          <button type="button" class="tool-mode-tab" onclick="window.location.href='photo-resizer.html'">
+            Passport Photo Mode
+          </button>
+          <button type="button" class="tool-mode-tab is-active" aria-selected="true">
+            Signature Mode (140×60 px / 20KB)
+          </button>
+          <button type="button" class="tool-mode-tab" onclick="window.location.href='compress-image-to-kb.html'">
+            Compress to Target KB
+          </button>
+        </div>
+
+        <div class="tool-body">
+          <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Upload signature file">
+            <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp,image/bmp" style="display: none;" aria-hidden="true">
+            <div class="dropzone-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+              </svg>
+            </div>
+            <h2 class="dropzone-title">Upload Signature Image (JPG or PNG)</h2>
+            <p class="dropzone-hint">Drag & drop your scanned or phone-photographed signature • Paste via Ctrl+V</p>
+            <div class="dropzone-badge-list">
+              <span class="dropzone-badge">Preset: 140 × 60 px</span>
+              <span class="dropzone-badge">Target: 10 KB – 20 KB</span>
+              <span class="dropzone-badge">Format: JPEG</span>
+            </div>
+          </div>
+
+          <div id="workbench" class="workbench-grid" style="display: none;">
+            <div class="canvas-panel">
+              <div id="canvas-container" class="canvas-viewport-wrapper">
+                <canvas id="preview-canvas" width="140" height="60"></canvas>
+              </div>
+
+              <div class="canvas-toolbar">
+                <div class="canvas-btn-group">
+                  <button type="button" id="btn-rotate-ccw" class="tool-icon-btn" title="Rotate 90° CCW">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                  </button>
+                  <button type="button" id="btn-rotate-cw" class="tool-icon-btn" title="Rotate 90° CW">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                  </button>
+                  <button type="button" id="btn-flip-h" class="tool-icon-btn" title="Flip Horizontal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h3"/><path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
+                  </button>
+                  <button type="button" id="btn-reset-transform" class="tool-icon-btn" title="Reset Zoom and Rotation">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                  </button>
+                </div>
+
+                <button type="button" id="btn-upload-new" class="btn btn-secondary btn-sm">
+                  Change Signature
+                </button>
+              </div>
+
+              <div class="stats-banner">
+                <div>
+                  <div class="stat-item-label">Original</div>
+                  <div id="stat-orig-size" class="stat-item-value">0 KB</div>
+                  <div id="stat-orig-dim" class="stat-item-label">0 × 0 px</div>
+                </div>
+                <div>
+                  <div class="stat-item-label">Output</div>
+                  <div id="stat-out-size" class="stat-item-value">0 KB</div>
+                  <div id="stat-out-dim" class="stat-item-label">140 × 60 px</div>
+                </div>
+              </div>
+
+              <div id="stat-status-badge" class="stat-item-badge badge-success" style="text-align: center; width: 100%; padding: 0.5rem;">
+                ✓ Ready for upload
+              </div>
+            </div>
+
+            <!-- Controls Panel -->
+            <div class="controls-panel">
+              <div class="control-group-card">
+                <div class="control-group-title">
+                  <span>Signature Preset</span>
+                  <a href="exam-presets.html" style="font-size: 0.775rem; text-transform: none;">All Presets →</a>
+                </div>
+                <div class="form-group">
+                  <select id="preset-select" class="form-control">
+                    <!-- Populated dynamically via tool.js -->
+                  </select>
+                </div>
+                <div id="preset-notice" class="callout-box" style="margin: 0.5rem 0 0; padding: 0.65rem 0.85rem; font-size: 0.825rem; display: none;"></div>
+              </div>
+
+              <div class="control-group-card">
+                <div class="control-group-title">Signature Dimensions & Limit</div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="target-width">Width (Pixels)</label>
+                    <input type="number" id="target-width" class="form-control" value="140" min="20" max="4000">
+                  </div>
+                  <div class="form-group">
+                    <label for="target-height">Height (Pixels)</label>
+                    <input type="number" id="target-height" class="form-control" value="60" min="20" max="4000">
+                  </div>
+                </div>
+
+                <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                  <input type="checkbox" id="lock-aspect-ratio">
+                  <label for="lock-aspect-ratio" style="margin: 0; font-size: 0.85rem; cursor: pointer;">Lock Aspect Ratio</label>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="target-format">Format</label>
+                    <select id="target-format" class="form-control">
+                      <option value="image/jpeg" selected>JPEG / JPG (Standard)</option>
+                      <option value="image/png">PNG</option>
+                      <option value="image/webp">WebP</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="bg-color-select">Background</label>
+                    <select id="bg-color-select" class="form-control">
+                      <option value="#ffffff" selected>White (Standard Paper)</option>
+                      <option value="transparent">Transparent (PNG)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 0.5rem;">
+                  <label for="target-kb">Maximum Target Size (KB)</label>
+                  <input type="number" id="target-kb" class="form-control" value="20" min="4" max="2000">
+                  <div class="quick-kb-chips">
+                    <button type="button" class="kb-chip" data-kb="10">10 KB</button>
+                    <button type="button" class="kb-chip is-selected" data-kb="20">20 KB (SSC/IBPS)</button>
+                    <button type="button" class="kb-chip" data-kb="30">30 KB (NEET/JEE)</button>
+                    <button type="button" class="kb-chip" data-kb="40">40 KB (RRB)</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Crop, Zoom & Framing -->
+              <div class="control-group-card">
+                <div class="control-group-title">Signature Crop & Framing</div>
+                <div class="form-group">
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                    <label for="slider-zoom" style="margin: 0;">Zoom & Fit</label>
+                    <span id="zoom-val-display" class="slider-val-badge">100%</span>
+                  </div>
+                  <div class="slider-control">
+                    <input type="range" id="slider-zoom" min="0.5" max="3" step="0.05" value="1.0">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="slider-pan-x">Pan Left / Right</label>
+                    <input type="range" id="slider-pan-x" min="-200" max="200" value="0">
+                  </div>
+                  <div class="form-group">
+                    <label for="slider-pan-y">Pan Up / Down</label>
+                    <input type="range" id="slider-pan-y" min="-200" max="200" value="0">
+                  </div>
+                </div>
+              </div>
+
+              <div class="workbench-actions">
+                <button type="button" id="btn-download" class="btn btn-primary btn-lg" style="width: 100%;">
+                  Download Form-Ready Signature
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AdSense Slot -->
+    <aside class="ad-slot-wrapper" aria-label="Advertisement">
+      <div class="ad-slot-box">
+        <span>Advertisement</span>
+        <span style="font-size: 0.7rem; color: var(--text-muted); margin-top: 4px;">Responsive Display Ad Slot</span>
+      </div>
+    </aside>
+
+    <!-- Detailed Signature Guide (600+ words) -->
+    <article class="container section-py rich-article-content" aria-labelledby="sig-guide-heading">
+      <h2 id="sig-guide-heading">The Definitive Guide to Exam Signature Sizing & Rejection Prevention</h2>
+      <p>
+        Across Indian competitive examinations, including the <strong>Staff Selection Commission (SSC)</strong>, the <strong>Institute of Banking Personnel Selection (IBPS)</strong>, the <strong>State Bank of India (SBI)</strong>, and the <strong>Railway Recruitment Boards (RRB)</strong>, candidate signature rejection remains alarmingly high. Unlike portrait photographs, digital signatures present unique technical challenges: they contain fine, high-frequency vector lines that degrade rapidly when processed through conventional lossy compression algorithms.
+      </p>
+
+      <h3>Why Signature Uploads Get Disqualified</h3>
+      <p>
+        Government application portals utilize validation software that evaluates both technical file metrics and visual legibility. Below are the primary causes of application cancellation related to signatures:
+      </p>
+      <ul>
+        <li><strong>Signing in Block Capital Letters:</strong> Many applicants sign their full name using separated uppercase letters (e.g. "R-A-H-U-L S-H-A-R-M-A"). IBPS and SBI explicitly state in their information handbooks: <em>"Signatures in CAPITAL LETTERS shall NOT be accepted."</em> Candidates must sign in continuous, running cursive or customary handwriting.</li>
+        <li><strong>Muddy or Grey Backgrounds:</strong> Photographing a signature under dim indoor light or fluorescent tubes causes white printer paper to look dark grey, sepia, or yellow. When compressed to 10 KB–20 KB, the contrast between the ink and the background collapses, rendering the signature unreadable.</li>
+        <li><strong>Faint Ink Pens:</strong> Using light-colored ballpoint pens, worn-out felt tips, or pencils creates thin, low-density lines that disappear during pixel downsampling.</li>
+        <li><strong>Ruled or Lined Paper:</strong> Signing on lined notebook paper introduces horizontal lines that intersect your pen strokes. Automated OCR filters frequently flag lined paper as invalid documents.</li>
+        <li><strong>Aspect Ratio Distortion:</strong> Forcing a tall, square crop into a 140x60 horizontal letterbox without proper aspect ratio scaling distorts the penmanship, leading to verification failures at the test center.</li>
+      </ul>
+
+      <h3>How to Create a Flawless Digital Signature Using Your Smartphone</h3>
+      <p>
+        You do not need a flatbed scanner or a trip to an internet café. Follow this step-by-step procedure:
+      </p>
+      <ol>
+        <li><strong>Paper:</strong> Use a clean, crisp sheet of plain unruled white paper (standard 75 GSM or 80 GSM copier paper).</li>
+        <li><strong>Pen:</strong> Sign using a black or dark blue ink pen (preferably a 0.7mm rollerball or bold gel pen) to ensure strong stroke density.</li>
+        <li><strong>Lighting:</strong> Place the paper near an open window during daytime. Position yourself so your phone or body does not cast a shadow across the signature.</li>
+        <li><strong>Capture:</strong> Hold your phone camera directly parallel to the paper. Avoid steep angles that introduce perspective keystoning. Take a high-resolution photo.</li>
+        <li><strong>Upload to FormReady:</strong> Drop the image into FormReady’s <strong>Signature Resizer</strong>. Our algorithm sets dimensions to 140x60 pixels, centers your signature on a solid white canvas, and compresses the output strictly between 10 KB and 20 KB.</li>
+      </ol>
+
+      <div class="callout-box">
+        <strong>Pro-Tip for Banking Applicants:</strong> Ensure that the signature you upload during application registration matches the signature you execute on the attendance sheet and call letter on examination day. Any material discrepancy can lead to disqualification.
+      </div>
+    </article>
+
+    <!-- FAQ Accordion -->
+    <section class="container section-py" aria-labelledby="sig-faq-heading">
+      <div class="text-center">
+        <div class="section-badge">FAQ</div>
+        <h2 id="sig-faq-heading">Frequently Asked Questions: Signature Resizing</h2>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>What are the exact signature requirements for SSC CGL 2026?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>
+              SSC requires digital signatures to have dimensions of 140 pixels width by 60 pixels height, with a file size strictly between 10 KB and 20 KB in JPG/JPEG format. It must be signed in running hand on white paper with a black ink pen.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Can I use a blue ink pen for my signature?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>
+              While most examinations accept dark blue ink, black ink is strongly recommended because it produces superior optical contrast against white paper when converted to digital grayscale or compressed into low KB limits.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question" aria-expanded="false">
+            <span>Why did my bank exam application reject my signature?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>
+              The most common reason for rejection in IBPS and SBI forms is signing in block capital letters, followed by blurry scans, grey shadows across the paper, and files exceeding the 20 KB limit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="brand-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            </div>
+            <span>Form<span style="color: var(--primary-600);">Ready</span></span>
+          </a>
+          <p style="font-size: 0.9rem; margin-bottom: 1.25rem;">
+            Free in-browser photo and signature resizer for all Indian government and competitive exams.
+          </p>
+          <div class="footer-privacy-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>100% Client-Side • Local Privacy</span>
+          </div>
+
+          <div class="footer-socials-wrapper">
+            <div class="social-icons-list" aria-label="Social Media Links">
+              <a href="https://facebook.com" class="social-icon-link social-fb" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+              <a href="https://x.com" class="social-icon-link social-x" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+              <a href="https://instagram.com" class="social-icon-link social-insta" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+              <a href="https://youtube.com" class="social-icon-link social-yt" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+              <a href="https://linkedin.com" class="social-icon-link social-in" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+              <a href="https://whatsapp.com" class="social-icon-link social-wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12.031 0C5.396 0 .012 5.385.012 12.02c0 2.12.553 4.184 1.603 6.002L.001 24l6.155-1.614a11.97 11.97 0 0 0 5.875 1.534h.005c6.634 0 12.019-5.385 12.019-12.02 0-3.21-1.25-6.226-3.52-8.497C18.261 1.233 15.244 0 12.031 0zm0 22.016c-1.8 0-3.567-.484-5.112-1.401l-.367-.218-3.799.996 1.014-3.704-.239-.38a10.02 10.02 0 0 1-1.536-5.289c0-5.526 4.498-10.023 10.039-10.023 2.68 0 5.197 1.044 7.09 2.94 1.892 1.895 2.934 4.415 2.934 7.095 0 5.527-4.498 10.024-10.024 10.024zm5.498-7.508c-.301-.151-1.782-.88-2.058-.98-.276-.101-.477-.151-.678.151-.2.301-.778.98-.954 1.181-.176.2-.352.226-.653.075-.301-.151-1.272-.469-2.423-1.496-.896-.799-1.501-1.786-1.677-2.087-.176-.301-.019-.464.132-.614.136-.135.301-.352.452-.528.151-.176.201-.301.301-.502.101-.2.05-.377-.025-.528-.075-.151-.678-1.633-.929-2.235-.245-.587-.494-.507-.678-.517l-.578-.01c-.2 0-.527.075-.803.377-.276.301-1.055 1.03-1.055 2.512 0 1.482 1.08 2.914 1.231 3.115.151.2 2.125 3.245 5.148 4.551.719.311 1.28.497 1.719.636.722.229 1.379.197 1.899.119.58-.088 1.782-.728 2.033-1.431.251-.703.251-1.306.176-1.431-.075-.125-.276-.2-.577-.351z"/></svg></a>
+              <a href="https://telegram.org" class="social-icon-link social-tg" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+              <a href="https://pinterest.com" class="social-icon-link social-pin" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12.004-5.367 12.004-11.987C24.021 5.367 18.644 0 12.017 0z"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Related Tools</h4>
+          <ul class="footer-nav-list">
+            <li><a href="photo-resizer.html">Passport Photo Resizer</a></li>
+            <li><a href="compress-image-to-kb.html">Compress Image to 20 KB</a></li>
+            <li><a href="compress-image-to-kb.html">Compress Image to 50 KB</a></li>
+            <li><a href="compress-image-to-kb.html">Compress Image to 100 KB</a></li>
+            <li><a href="exam-presets.html">All Exam Presets</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Signature Presets</h4>
+          <ul class="footer-nav-list">
+            <li><a href="exam-presets.html?filter=ssc">SSC CGL Signature (140×60)</a></li>
+            <li><a href="exam-presets.html?filter=banking">IBPS PO Signature (140×60)</a></li>
+            <li><a href="exam-presets.html?filter=upsc">UPSC Signature (350×350)</a></li>
+            <li><a href="exam-presets.html?filter=railways">RRB Signature (140×60)</a></li>
+            <li><a href="exam-presets.html?filter=nta">NEET Signature (140×60)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Company & Legal</h4>
+          <ul class="footer-nav-list">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+            <li><a href="blog.html">Guides & Editorial</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span class="current-year">2026</span> FormReady. Zero server uploads — 100% private.
+        </div>
+        <div>
+          Not affiliated with SSC, UPSC, NTA, IBPS, or any government body.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/tool.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+

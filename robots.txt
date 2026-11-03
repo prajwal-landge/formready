@@ -1,0 +1,7 @@
+# FormReady robots.txt
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+Sitemap: https://formready.io/sitemap.xml
+
