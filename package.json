@@ -1,0 +1,22 @@
+{
+  "name": "formready",
+  "version": "1.0.0",
+  "description": "Free Photo & Signature Resizer for Indian Exam Forms",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prajwal-landge/formready.git"
+  },
+  "keywords": [
+    "photo-resizer",
+    "signature-resizer",
+    "image-compression"
+  ],
+  "author": "FormReady",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}
